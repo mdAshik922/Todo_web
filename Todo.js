@@ -9,16 +9,19 @@ add_btn.addEventListener('click', function(e){
     let taskName = newTaskInp.value;
     if(!taskName){
         alert("please insert a new task name");
+        return ;
     }
    
-        else{
+    
             newTaskInp.value = '';
-        }
+        
     
         addNewItem(taskName)
     // console.log(taskName)
 })
 
-function addNewItem(tex){
-    
+function addNewItem(text){
+    const item = document.createElement('div');
+    item.className = 'item'
+console.log(text);
 }
