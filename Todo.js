@@ -21,7 +21,10 @@ add_btn.addEventListener('click', function(e){
 function addNewItem(text){
     const item = document.createElement('div');
     item.className = 'item';
-    item.innerHTML = "<h2>hello</h2>";
+    item.innerHTML = `<li>${text}</li>
+    <button class="edit"><span class="material-icons-outlined">edit</span></button>
+    <button class="complete"><span class="material-icons-outlined">check</span></button>
+    <button class="delete"><span class="material-icons-outlined"> delete</span></button>`;
     taskList.appendChild(item);
 // console.log(text);
 };
