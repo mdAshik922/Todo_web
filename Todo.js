@@ -22,6 +22,10 @@ add_btn.addEventListener('click', function(e){
 
 function addNewItem(text){
     const item = document.createElement('div');
-    item.className = 'item'
+    item.className = 'item';
+    item.innerHTML = ` <li>item1</li>
+    <button class="edit"><span class="material-icons-outlined">edit</span></button>
+    <button class="complete"><span class="material-icons-outlined">check</span></button>
+    <button class="delete"><span class="material-icons-outlined"> delete</span></button>`
 console.log(text);
 }
