@@ -13,6 +13,8 @@ body{
     color: aliceblue;
 }
 
+
+
 button{
 padding: 5px;
 }
@@ -22,7 +24,7 @@ padding: 5px;
     
 }
 
- .item{
+.display_area ul.item{
     display: flex;
     justify-content: flex-end;
     max-width: 500px;
@@ -31,7 +33,7 @@ padding: 5px;
     
 }
 
-.item li{
+.display_area ul.item li{
     padding: 6px;
     list-style: none;
     flex-grow: 1;
