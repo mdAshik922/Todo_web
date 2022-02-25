@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #212121;
+}
+
+.container{
+    text-align: center;
+    color: aliceblue;
+}
+
+button{
+padding: 5px;
+}
+
+.item li button{
+    margin: 3px;
+    
+}
+
+ .item{
+    display: flex;
+    justify-content: flex-end;
+    max-width: 500px;
+    margin: auto;  
+    
+}
+
+.item li{
+    padding: 6px;
+    list-style: none;
+    flex-grow: 1;
+    text-align: unset;
+}
