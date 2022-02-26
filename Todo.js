@@ -66,8 +66,8 @@ e.target.style.display = 'none';
 
 };
 
-function completeTaskName(e){
-   const li = e.target.parentElement.firstElementChild;
+function completeTaskName(event){
+   const li = event.target.parentElement.firstElementChild;
 li.style.textDecoration = 'line-through';
 li.style.opacity = '0.5';
 
