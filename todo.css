@@ -24,7 +24,7 @@ padding: 5px;
     
 }
 
-.display_area ul.item{
+.display_area ul .item{
     display: flex;
     justify-content: flex-end;
     max-width: 500px;
@@ -33,9 +33,9 @@ padding: 5px;
     
 }
 
-.display_area ul.item li{
+.item li{
     padding: 6px;
     list-style: none;
     flex-grow: 1;
-    text-align: unset;
+    text-align: left;
 }

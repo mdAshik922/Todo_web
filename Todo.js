@@ -47,6 +47,7 @@ function edit(event){
 function complete(event){
    const li = event.target.parentElement.firstElementChild;
 li.style.textDecoration = 'line-through';
+li.style.opacity = '0.5';
 }
 function deleteItem(event){
     event.target.parentElement.remove();
