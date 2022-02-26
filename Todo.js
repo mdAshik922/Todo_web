@@ -45,5 +45,5 @@ function deleteItem(event){
     event.target.parentElement.remove();
 };
 function deleteItem(event){
-    event.target.parentElement.remove()
-}
+    event.target.parentElement.remove();
+};
