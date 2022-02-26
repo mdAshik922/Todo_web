@@ -52,6 +52,7 @@ li.innerHTML =  input;
 input.addEventListener('keypress', function(event){
     if(event.key == 'Enter'){
 const newNAme = event.target.value;
+li.innerHTML = '';
     }
 })
 li.appendChild(input);
