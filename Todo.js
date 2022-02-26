@@ -59,25 +59,10 @@ input.addEventListener('keypress', function(e){
         li.innerHTML = ''
         li.innerText = updateName;
         event.target.style.display = 'inline';
+       
+    };
 
-        const tasks = getTaskFromLocalStorage();
-        let index;
-
-        for (let i = 0; i < tasks.length; i++) {
-            if (tasks[i][0].trim() === previousText) {
-                index = i;
-            }
-        }
-        let modifiedItem = tasks[index];
-
-        modifiedItem.splice(0, 1, modifiedName);
-        tasks.splice(index, 1, modifiedItem);
-
-
-        setTaskToLocalStorage(tasks);
-    }
-
-})
+});
    li.appendChild(input);
    event.target.style.display = 'none';
 
