@@ -41,9 +41,13 @@ taskList.addEventListener('click', function(e){
     }
 });
 
-function deleteItem(event){
+function edit(event){
     event.target.parentElement.remove();
 };
+function complete(event){
+   const li = event.target.parentElement.firstElementChild;
+li.style.textDecoration = 'line-through';
+}
 function deleteItem(event){
     event.target.parentElement.remove();
 };
