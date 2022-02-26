@@ -42,5 +42,8 @@ taskList.addEventListener('click', function(e){
 });
 
 function deleteItem(event){
+    event.target.parentElement.remove();
+};
+function deleteItem(event){
     event.target.parentElement.remove()
 }
