@@ -43,8 +43,11 @@ deleteTaskNAme(e);
 
 function editTaskName(e){
     const li = e.target.parentElement.remove();
-  const = li.innerHTML;
-
+  const parentText = li.innerHTML;
+li.innerHTML =  '';
+const input  = createElement('input');
+input.type =  text;
+input.value = parentText;
 };
 
 function completeTaskName(e){
