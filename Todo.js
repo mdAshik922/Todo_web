@@ -44,25 +44,42 @@ taskList.addEventListener('click', function(e){
     }
 });
 
-function editTaskName(e){
-    const li = e.target.parentElement.firstElementChild;
-  const parentText = li.innerHTML;
-li.innerHTML = '';
-const input  = createElement('input');
-input.type =  text;
-input.value = parentText;
-li.innerHTML =  input;
-input.addEventListener('keypress', function(event){
-    if(event.key == 'Enter'){
-const updateName = event.target.value;
-li.innerHTML = '';
-li.innerText = updateName;
-e.target.style.display = 'inline';
-    }
-});
+function editTaskName(event){
+   const li = event.target.parentElement.firstElementChild;
+   const parentText = li.innerText;
+   li.innerHTML = '';
 
-li.appendChild(input);
-e.target.style.display = 'none';
+   const input = document.createElement('input');
+   input.type = 'text';
+   input.value = parentText;
+
+input.addEventListener('keypress', function(e){
+    if(e.key == 'Enter'){
+        const updateName = e.target.value;
+        li.innerHTML = ''
+        li.innerText = updateName;
+        event.target.style.display = 'inline';
+
+        const tasks = getTaskFromLocalStorage();
+        let index;
+
+        for (let i = 0; i < tasks.length; i++) {
+            if (tasks[i][0].trim() === previousText) {
+                index = i;
+            }
+        }
+        let modifiedItem = tasks[index];
+
+        modifiedItem.splice(0, 1, modifiedName);
+        tasks.splice(index, 1, modifiedItem);
+
+
+        setTaskToLocalStorage(tasks);
+    }
+
+})
+   li.appendChild(input);
+   event.target.style.display = 'none';
 
 };
 
