@@ -48,7 +48,18 @@ li.innerHTML =  '';
 const input  = createElement('input');
 input.type =  text;
 input.value = parentText;
+li.innerHTML =  input;
+input.addEventListener('keypress', function(event){
+    if(event.key == 'Enter'){
+const newNAme = event.target.value;
+    }
+})
+li.appendChild(input);
+e.target.style.display = 'none';
+
+
 };
+
 
 function completeTaskName(e){
    const li = e.target.parentElement.firstElementChild;
