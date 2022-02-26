@@ -13,7 +13,7 @@ add_btn.addEventListener('click', function(e){
         return ;
     }
    
-            newTaskInp.value = '';  
+            newTaskInp.value = ' ';  
         addNewItem(taskName);
     // console.log(taskName)
 });
@@ -28,3 +28,19 @@ function addNewItem(text){
     taskList.appendChild(item);
 // console.log(text);
 };
+
+taskList.addEventListener('click', function(e){
+    if(e.target.className == "edit"){
+
+    }
+   else if(e.target.className == "complete"){
+
+    }
+    else if(e.target.className == "delete"){
+
+    }
+});
+
+function deleteItem(event){
+    event.target.parentElement.remove()
+}

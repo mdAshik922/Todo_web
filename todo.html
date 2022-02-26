@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
-    rel="stylesheet">
-<link rel="stylesheet" href="todo.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="todo.css">
     <title>Todo-app</title>
 </head>
-<body>
-  <div class="container">
-    <h2>My Todo-App</h2>
-    <div class="taskCreation">
-<input id="newTaskInp" type="text" placeholder="add a new task">
-<button id="addNewBtn">Add </button>
 
+<body>
+    <div class="container">
+        <h2>My Todo-App</h2>
+        <div class="taskCreation">
+            <input id="newTaskInp" type="text" placeholder="add a new task">
+            <button id="addNewBtn">Add </button>
+
+        </div>
+
+        <div class="display_area">
+            <ul id="task_list">
+                <div class="item">
+                    <li>item1</li>
+                    <button class="edit"><span class="material-icons-outlined">edit</span></button>
+                    <button class="complete"><span class="material-icons-outlined">check</span></button>
+                    <button class="delete"><span class="material-icons-outlined"> delete</span></button>
+                </div>
+            </ul>
+        </div>
     </div>
 
-<div class="display_area">
-<ul class="task_list">
-<div class="item">
-    <li>item1</li>
-    <button class="edit"><span class="material-icons-outlined">edit</span></button>
-    <button class="complete"><span class="material-icons-outlined">check</span></button>
-    <button class="delete"><span class="material-icons-outlined"> delete</span></button>
-</div>
-</ul>
-</div>
-
-
-  </div>
-  <script src="Todo.js"></script>
+    <script src="Todo.js"></script>
 </body>
+
 </html>
