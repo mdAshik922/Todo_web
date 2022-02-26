@@ -51,8 +51,9 @@ input.value = parentText;
 li.innerHTML =  input;
 input.addEventListener('keypress', function(event){
     if(event.key == 'Enter'){
-const newNAme = event.target.value;
+const updateName = event.target.value;
 li.innerHTML = '';
+li.innerText = updateName;
     }
 })
 li.appendChild(input);
