@@ -31,13 +31,13 @@ function addNewItem(text){
 
 taskList.addEventListener('click', function(e){
     if(e.target.className == "edit"){
-
+editTaskName(e);
     }
    else if(e.target.className == "complete"){
-
+completeTaskName(e);
     }
     else if(e.target.className == "delete"){
-
+deleteTaskNAme(e);
     }
 });
 
