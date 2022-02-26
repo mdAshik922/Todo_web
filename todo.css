@@ -23,6 +23,9 @@ padding: 5px;
     margin: 3px;
     
 }
+.material-icons-outlined{
+pointer-events: none;
+}
 
 .display_area ul .item{
     display: flex;
