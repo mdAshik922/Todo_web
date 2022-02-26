@@ -13,7 +13,9 @@ add_btn.addEventListener('click', function(e){
         return ;
     }
    
-            newTaskInp.value = ' ';  
+           else{
+            newTaskInp.value = ''; 
+           } 
         addNewItem(taskName);
     // console.log(taskName)
 });
@@ -30,21 +32,22 @@ function addNewItem(text){
 };
 
 taskList.addEventListener('click', function(e){
-    if(e.target.className == "edit"){
-editTaskName(e);
+    if(e.target.className == 'edit'){
+        editTaskName(e);
     }
-   else if(e.target.className == "complete"){
-completeTaskName(e);
+   else if(e.target.className == 'complete'){
+    completeTaskName(e);
+// console.log(e.target)
     }
-    else if(e.target.className == "delete"){
-deleteTaskNAme(e);
+    else if(e.target.className == 'delete'){
+        deleteTaskName(e);
     }
 });
 
 function editTaskName(e){
-    const li = e.target.parentElement.remove();
+    const li = e.target.parentElement.firstElementChild;
   const parentText = li.innerHTML;
-li.innerHTML =  '';
+li.innerHTML = '';
 const input  = createElement('input');
 input.type =  text;
 input.value = parentText;
@@ -54,14 +57,14 @@ input.addEventListener('keypress', function(event){
 const updateName = event.target.value;
 li.innerHTML = '';
 li.innerText = updateName;
+e.target.style.display = 'inline';
     }
-})
+});
+
 li.appendChild(input);
 e.target.style.display = 'none';
 
-
 };
-
 
 function completeTaskName(e){
    const li = e.target.parentElement.firstElementChild;
@@ -70,7 +73,7 @@ li.style.opacity = '0.5';
 
 };
 
-function deleteTaskNAme(e){
-    e.target.parentElement.remove();
+function deleteTaskName(event){
+    event.target.parentElement.remove();
 
 };
