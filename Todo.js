@@ -41,14 +41,20 @@ deleteTaskNAme(e);
     }
 });
 
-function edit(event){
-    event.target.parentElement.remove();
+function editTaskName(e){
+    const li = e.target.parentElement.remove();
+  const = li.innerHTML;
+
 };
-function complete(event){
-   const li = event.target.parentElement.firstElementChild;
+
+function completeTaskName(e){
+   const li = e.target.parentElement.firstElementChild;
 li.style.textDecoration = 'line-through';
 li.style.opacity = '0.5';
-}
-function deleteItem(event){
-    event.target.parentElement.remove();
+
+};
+
+function deleteTaskNAme(e){
+    e.target.parentElement.remove();
+
 };
