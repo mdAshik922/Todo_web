@@ -1,42 +1,42 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #212121;
 }
 
-.container{
+.container {
     text-align: center;
     color: aliceblue;
 }
 
 
-
-button{
-padding: 5px;
+button {
+    padding: 5px;
 }
 
-.item li button{
+.item li button {
     margin: 3px;
-    
-}
-.material-icons-outlined{
-pointer-events: none;
+
 }
 
-.display_area ul .item{
+.material-icons-outlined {
+    pointer-events: none;
+}
+
+.display_area ul .item {
     display: flex;
     justify-content: flex-end;
     max-width: 500px;
-    margin: auto;  
+    margin: auto;
     background-color: rgb(201, 132, 189);
-    
+
 }
 
-.item li{
+.item li {
     padding: 6px;
     list-style: none;
     flex-grow: 1;
