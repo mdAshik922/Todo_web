@@ -81,19 +81,34 @@ function deleteTaskName(event){
 };
 
 
-Document.body.onload = function(e){
+document.body.onload = function(e){
+const task = getTaskLocalStorage();
 
 };
 
 function getTaskLocalStorage(){
 
-    let task;
+    // let task;
     const data = localStorage.getItem("task");
-    if(data){
-        task = JSON.parse(data)
-    }
-    else{
-        task = [];
-    }
+
+
+        const task = JSON.parse(data) || [];
+   
+
     return task;
 };
+
+function displayTask(task){
+
+task.forEach(element => {
+    const createDiv = document.createElement('div');
+    createDiv.className = 'item';
+    createDiv.innerHTML = `
+    <li>${task}</li>
+                    <button class="edit"><span class="material-icons-outlined">edit</span></button>
+                    <button class="complete"><span class="material-icons-outlined">check</span></button>
+                    <button class="delete"><span class="material-icons-outlined"> delete</span></button>`
+
+                    taskList.appendChild(item);
+});
+   };
