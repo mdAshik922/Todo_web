@@ -84,3 +84,7 @@ function deleteTaskName(event){
 Document.body.onload = function(e){
 
 };
+
+function getTaskLocalStorage(){
+
+};
