@@ -83,7 +83,7 @@ deleteTaskLocalStorage(taskName);
 
 function deleteTaskLocalStorage(){
 const task = getTaskLocalStorage();
-
+task.indexOf(taskName);
 }
 
 
