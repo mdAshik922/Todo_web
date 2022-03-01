@@ -77,8 +77,14 @@ li.style.opacity = '0.5';
 
 function deleteTaskName(event){
     event.target.parentElement.remove();
-
+const taskName = event.target.parentElement.firstElementChild.innterText;
+deleteTaskLocalStorage(taskName);
 };
+
+function deleteTaskLocalStorage(){
+const task = getTaskLocalStorage();
+
+}
 
 
 document.body.onload = function(e){
@@ -105,9 +111,9 @@ task.forEach(element => {
     createDiv.className = 'item';
     createDiv.innerHTML = `
     <li>${task}</li>
-                    <button class="edit"><span class="material-icons-outlined">edit</span></button>
-                    <button class="complete"><span class="material-icons-outlined">check</span></button>
-                    <button class="delete"><span class="material-icons-outlined"> delete</span></button>`
+     <button class="edit"><span class="material-icons-outlined">edit</span></button>
+     <button class="complete"><span class="material-icons-outlined">check</span></button>
+     <button class="delete"><span class="material-icons-outlined"> delete</span></button>`
 
                     taskList.appendChild(item);
 });
