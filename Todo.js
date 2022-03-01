@@ -87,6 +87,13 @@ Document.body.onload = function(e){
 
 function getTaskLocalStorage(){
 
+    let task;
     const data = localStorage.getItem("task");
-    
+    if(data){
+        task = JSON.parse(data)
+    }
+    else{
+        task = [];
+    }
+    return task;
 };
