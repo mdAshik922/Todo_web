@@ -84,8 +84,14 @@ deleteTaskLocalStorage(taskName);
 function deleteTaskLocalStorage(){
 const task = getTaskLocalStorage();
 task.indexOf(taskName);
-}
+task.splice(index, 1);
+setLocalStorage(task);
+};
 
+
+function setLocalStorage(){
+
+}
 
 document.body.onload = function(e){
 const task = getTaskLocalStorage();
@@ -94,19 +100,17 @@ const task = getTaskLocalStorage();
 
 function getTaskLocalStorage(){
 
-    // let task;
+    //  let task;
     const data = localStorage.getItem("task");
 
-
         const task = JSON.parse(data) || [];
-   
 
     return task;
 };
 
 function displayTask(task){
 
-task.forEach(element => {
+task.forEach( element => {
     const createDiv = document.createElement('div');
     createDiv.className = 'item';
     createDiv.innerHTML = `
