@@ -92,21 +92,27 @@ setLocalStorage(task);
 };
 
 
-function setLocalStorage(){
+function setLocalStorage(task){
 localStorage.setItem("task", JSON.stringify(task))
 }
 
 document.body.onload = function(e){
 const task = getTaskLocalStorage();
-
+displayTask(task);
 };
 
 function getTaskLocalStorage(){
 
-    //  let task;
+     let task;
     const data = localStorage.getItem("task");
 
-        const task = JSON.parse(data) || [];
+        // const task = JSON.parse(data) || [];
+        if(data){
+            task = JSON.parse(data)
+        }
+        else{
+            task = []
+        }
 
     return task;
 };
