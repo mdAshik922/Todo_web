@@ -77,7 +77,7 @@ li.style.opacity = '0.5';
 
 function deleteTaskName(event){
     event.target.parentElement.remove();
-const taskName = event.target.parentElement.firstElementChild.innterText;
+const taskName = event.target.parentElement.firstElementChild.innerText;
 deleteTaskLocalStorage(taskName);
 };
 
@@ -90,7 +90,7 @@ setLocalStorage(task);
 
 
 function setLocalStorage(){
-
+localStorage.setItem("task", JSON.stringify(task))
 }
 
 document.body.onload = function(e){
