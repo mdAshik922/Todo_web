@@ -30,6 +30,7 @@ function addNewItem(text){
     taskList.appendChild(item);
 // console.log(text);
 const task = getTaskLocalStorage();
+task.push(text);
 setLocalStorage(task);
 };
 
