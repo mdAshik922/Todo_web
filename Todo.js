@@ -29,6 +29,8 @@ function addNewItem(text){
     <button class="delete"><span class="material-icons-outlined"> delete</span></button>`;
     taskList.appendChild(item);
 // console.log(text);
+const task = getTaskLocalStorage();
+setLocalStorage(task);
 };
 
 taskList.addEventListener('click', function(e){
