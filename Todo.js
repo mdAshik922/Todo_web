@@ -151,10 +151,10 @@ task.forEach( element => {
     item.className = "item";
     let completed;
     if (task[1] == 'completed') {
-        completed = 'completed-task'
+        completed = 'completed-task';
     } else {
-        completed = ''
-    }
+        completed = '';
+    };
     createDiv.innerHTML = `
     <li>${task}</li>
      <button class="edit"><span class="material-icons-outlined">edit</span></button>
