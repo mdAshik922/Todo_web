@@ -203,13 +203,13 @@ function editTask(button, id) {
             noTd = td;
             newNo.value = preNo;
             td.innerHTML = ''
-            td.appendChild(newNo)
+            td.appendChild(newNo);
         } else if (td.id == 'name') {
             const preName = td.innerText;
             nameTd = td;
             newName.value = preName;
             td.innerHTML = ''
-            td.appendChild(newName)
+            td.appendChild(newName);
         } else if (td.id == "priority") {
             const prePriority = td.innerText;
             priorityTd = td;
@@ -222,19 +222,19 @@ function editTask(button, id) {
             const options = newPriority.children;
             [...options].forEach((opt, i) => {
                 if (opt.value == prePriority) {
-                    newPriority.selectedIndex = i
+                    newPriority.selectedIndex = i;
                 }
-            })
+            });
 
             td.innerHTML = '';
-            td.appendChild(newPriority)
+            td.appendChild(newPriority);
         } else if (td.id == 'date') {
             const preDate = td.innerText;
             dateTd = td;
             newDate.type = 'date';
             newDate.value = preDate;
             td.innerHTML = '';
-            td.appendChild(newDate)
+            td.appendChild(newDate);
         } else if (td.id == 'action') {
             const preAction = td.innerHTML;
             actionBtn.innerHTML = '<i class="fas fa-save"></i>';
@@ -253,7 +253,7 @@ function editTask(button, id) {
 
                 td.innerHTML = preAction;
                 const id = tds[0].value;
-                const tasks = getTasksFromLocalStorage()
+                const tasks = getTasksFromLocalStorage();
 
                 tasks.filter((task, i) => {
                     if (task.id == id) {
@@ -262,27 +262,27 @@ function editTask(button, id) {
                         task.date = date;
                     }
                     return task;
-                })
-                setTasksToLocalStorage(tasks)
+                });
+                setTasksToLocalStorage(tasks);
 
-            })
-            td.innerHTML = ''
-            td.appendChild(actionBtn)
-        }
+            });
+            td.innerHTML = '';
+            td.appendChild(actionBtn);
+        };
 
-    })
-}
+    });
+};
 
 
 
 function deleteTask(button, id) {
-    button.parentElement.parentElement.remove()
-    const tasks = getTasksFromLocalStorage()
+    button.parentElement.parentElement.remove();
+    const tasks = getTasksFromLocalStorage();
     const modifiedArray = tasks.filter(task => {
-        return task.id !== id
+        return task.id !== id;
     })
     setTasksToLocalStorage(modifiedArray);
-}
+};
 
 function completeTask(button, id) {
     const tds = button.parentElement.parentElement.children;
@@ -290,25 +290,25 @@ function completeTask(button, id) {
         if (td.id == 'status') {
             const status = td.textContent;
             if (status == 'incomplete') {
-                td.innerText = "complete"
+                td.innerText = "complete";
             } else {
-                td.innerText = "incomplete"
-            }
-            const tasks = getTasksFromLocalStorage()
+                td.innerText = "incomplete";
+            };
+            const tasks = getTasksFromLocalStorage();
             const modifiedTask = tasks.filter(task => {
                 if (task.id === id) {
                     if (task.status == 'incomplete') {
-                        task.status = 'complete'
+                        task.status = 'complete';
                         return task;
                     } else {
-                        task.status = 'incomplete'
+                        task.status = 'incomplete';
                         return task;
                     }
                 }
                 return task;
 
             })
-            setTasksToLocalStorage(modifiedTask)
-        }
+            setTasksToLocalStorage(modifiedTask);
+        };
     })
-}
+};
