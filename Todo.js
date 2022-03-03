@@ -34,7 +34,7 @@ for (let task of tasks) {
     if (task[0].trim() === text.trim()) {
         newText += ' ';
     }
-}
+};
 
 const taskArray = [newText, "active"];
 task.push(text);
@@ -66,10 +66,9 @@ function editTaskName(event){
 input.addEventListener('keypress', function(e){
     if(e.key == 'Enter'){
         const updateName = e.target.value;
-        li.innerHTML = ''
+        li.innerHTML = '';
         li.innerText = updateName;
-        event.target.style.display = 'inline';
-       
+        event.target.style.display = 'inline';     
     };
 
 });
@@ -120,7 +119,7 @@ setLocalStorage(task);
 
 function setLocalStorage(task){
 localStorage.setItem("task", JSON.stringify(task))
-}
+};
 
 document.body.onload = function(e){
 const task = getTaskLocalStorage();
@@ -138,7 +137,7 @@ function getTaskLocalStorage(){
         }
         else{
             task = []
-        }
+        };
 
     return task;
 };
