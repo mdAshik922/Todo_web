@@ -12,7 +12,6 @@ add_btn.addEventListener('click', function(e){
         alert("please insert a new task name");
         return ;
     }
-   
            else{
             newTaskInp.value = ''; 
            } 
@@ -30,6 +29,14 @@ function addNewItem(text){
     taskList.appendChild(item);
 // console.log(text);
 const task = getTaskLocalStorage();
+let newText = text;
+for (let task of tasks) {
+    if (task[0].trim() === text.trim()) {
+        newText += ' ';
+    }
+}
+
+const taskArray = [newText, "active"]
 task.push(text);
 setLocalStorage(task);
 };
