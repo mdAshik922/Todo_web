@@ -11,20 +11,88 @@
 </head>
 
 <body>
-    <div class="container">
-        <h2>My Todo-App</h2>
-        <div class="taskCreation">
-            <input id="newTaskInp" type="text" placeholder="add a new task">
-            <button id="addNewBtn">Add </button>
+    <main>
+        <h1 class="title">My To-Do Lists</h1>
+        <div class="container">
+            <h3 class="subTitle">New Task Creation</h3>
+            <div class="horizontalLine"></div>
+            <form id="task-form">
+                <div class="field name_field">
+                    <label for="taskName">Name </label>
+                    <input name="taskName" id="taskName" type="text" placeholder="Add a new task">
+                </div>
 
-        </div>
+                <div class="field">
+                    <label for="priority">Priority</label>
+                    <select aria-placeholder="select one" name="priority" id="priority">
+                        <option disabled>Select one</option>
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
 
-        <div class="display_area">
-            <ul id="task_list">
-               
-            </ul>
+                <div class="field">
+                    <label for="date">Date</label>
+                    <input type="date" name="date" id="date">
+                </div>
+                <input type="submit" value="Add Now">
+            </form>
         </div>
-    </div>
+        <div class="container">
+            <h3 class="subTitle">Task Management</h3>
+            <div class="horizontalLine"></div>
+
+            <div class="filter_container">
+                <div class="search">
+                    <label for="search">Search :</label>
+                    <input id="search" name="search" placeholder="Search by name" type="search">
+                </div>
+
+                <div class="filter">
+                    <label for="filter">Filter :</label>
+                    <select name="filter" id="filter">
+                        <option value="">All</option>
+                        <option value="complete">Completed</option>
+                        <option value="incomplete">Incomplete</option>
+                        <option value="toDay">To Day</option>
+                        <option value="high">High priority</option>
+                        <option value="medium">Medium priority</option>
+                        <option value="low">Low priority</option>
+                    </select>
+
+                </div>
+                <div class="sort">
+                    <label for="sort">Sort :</label>
+                    <select name="sort" id="sort">
+                        <option value="newest">Newest</option>
+                        <option value="oldest">Oldest</option>
+                    </select>
+
+                </div>
+                <div class="sortByDate">
+                    <label for="sortDate">By Date :</label>
+                    <input type="date" name="sortDate" id="sortDate">
+                </div>
+            </div>
+        </div>
+        <div class="container table_container">
+            <table class="table table-responsive table-white">
+                <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">Task Name</th>
+                        <th scope="col">Priority</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tBody"></tbody>
+            </table>
+        </div>
+        
+    </main>
 
     <script src="Todo.js"></script>
 </body>

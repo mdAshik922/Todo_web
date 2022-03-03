@@ -1,44 +1,126 @@
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    font-family: "Poppins", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    background-color: #0f0826;
+}
+.title{
+    text-transform: uppercase;
+   text-align: center;
+   color: white;
+   margin: 10px 0;
 
-body {
-    background-color: #212121;
+}
+main{
+    max-width: 900px;
+    background: #211548;
+    margin: auto;
+    height: 95vh;
+}
+.container{
+    max-width: 900px;
+    padding: 0 15px;
+    margin: auto;
+    background: #211548;
 }
 
-.container {
-    text-align: center;
-    color: aliceblue;
+form{
+    display: flex;
+    align-items: flex-end;
+    margin: auto;
+    padding: 10px;
+    width: 100%;
 }
 
+.field{
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px;
+}
 
-button {
+input, select {
+    display: inline-block;
+    height: 30px;
+    border: 0;
+    outline: 0;
     padding: 5px;
 }
 
-.item li button {
-    margin: 3px;
-
+td input[type="text"],
+td input[type="date"] {
+  max-width: 150px;
+}
+.name_field{
+    flex: 1;
 }
 
-.material-icons-outlined {
-    pointer-events: none;
+label{
+    color: white;
+    margin-bottom: 5px;
 }
 
-.display_area ul .item {
+input[type='submit']{
+    background: #fc1d49;
+    color: white;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.horizontalLine{
+    width: 100%;
+    margin: 0 auto;
+    height: 1px;
+   background: rgb(106, 106, 106);
+   margin: 10px 0 0;
+}
+
+.filter_container{
     display: flex;
-    justify-content: flex-end;
-    max-width: 500px;
-    margin: auto;
-    background-color: rgb(201, 132, 189);
-
+    justify-content: space-between;
+    margin: 10px 0 0;
+}
+.subTitle{
+    color: white;
 }
 
-.item li {
-    padding: 6px;
-    list-style: none;
-    flex-grow: 1;
-    text-align: left;
+th,td{
+    color: white;
+}
+
+table,thead,tbody,tr,th,td{
+    border: none;
+    text-align: center;
+}
+
+tr:hover{
+    background: #000;
+}
+
+tr:hover td{
+    color: white !important;
+}
+
+thead tr{
+    background: #000;
+}
+
+.table_container{
+    padding-bottom: 25px;
+    margin-top: 15px;
+}
+td button{
+    border: none;
+    background-color: unset;
+    margin: 0 5px;
+
+}
+button i{
+    pointer-events: none;
+    color: green;
+    font-size: 25px;
 }
