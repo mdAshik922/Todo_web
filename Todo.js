@@ -123,6 +123,7 @@ localStorage.setItem("task", JSON.stringify(task))
 
 document.body.onload = function(e){
 const task = getTaskLocalStorage();
+
 displayTask(task);
 };
 
@@ -147,6 +148,13 @@ function displayTask(task){
 task.forEach( element => {
     const createDiv = document.createElement('div');
     createDiv.className = 'item';
+    item.className = "item";
+    let completed;
+    if (task[1] == 'completed') {
+        completed = 'completed-task'
+    } else {
+        completed = ''
+    }
     createDiv.innerHTML = `
     <li>${task}</li>
      <button class="edit"><span class="material-icons-outlined">edit</span></button>
