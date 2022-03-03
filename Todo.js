@@ -36,7 +36,7 @@ for (let task of tasks) {
     }
 }
 
-const taskArray = [newText, "active"]
+const taskArray = [newText, "active"];
 task.push(text);
 setLocalStorage(task);
 };
@@ -82,6 +82,25 @@ function completeTaskName(event){
    const li = event.target.parentElement.firstElementChild;
 li.style.textDecoration = 'line-through';
 li.style.opacity = '0.5';
+const tasks = getTaskLocalStorage()
+
+let index;
+for (let i = 0; i < tasks.length; i++) {
+    if (tasks[i][0].trim() == li.innerText) {
+        index = i;
+    }
+}
+
+const completedTask = tasks[index];
+
+if (completedTask[1] == 'active') {
+    completedTask[1] = "completed"
+} else {
+    completedTask[1] = "active"
+}
+
+tasks.splice(index, 1, completedTask);
+setLocalStorage(tasks);
 
 };
 
