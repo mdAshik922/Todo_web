@@ -284,6 +284,7 @@ function deleteTask(button, id) {
 
 function completeTask(button, id) {
     const tds = button.parentElement.parentElement.children;
+
     [...tds].forEach(td => {
         if (td.id == 'status') {
             const status = td.textContent;
@@ -292,6 +293,7 @@ function completeTask(button, id) {
             } else {
                 td.innerText = "incomplete";
             };
+            
             const tasks = getTasksFromLocalStorage();
 
             const modifiedTask = tasks.filter(task => {
@@ -304,7 +306,7 @@ function completeTask(button, id) {
                         return task;
                     };
                 };
-                
+
                 return task;
             });
             setTasksToLocalStorage(modifiedTask);
