@@ -301,8 +301,8 @@ function completeTask(button, id) {
                     } else {
                         task.status = 'incomplete';
                         return task;
-                    }
-                }
+                    };
+                };
                 return task;
             });
             setTasksToLocalStorage(modifiedTask);
