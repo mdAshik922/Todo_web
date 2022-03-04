@@ -175,7 +175,6 @@ function addTask(task, index) {
 function editTask(button, id) {
     const tds = button.parentElement.parentElement.children;
 
-    // 
     const newNo = document.createElement('input');
     newNo.type = 'text';
     const newName = document.createElement('input');
@@ -216,7 +215,7 @@ function editTask(button, id) {
             [...options].forEach((opt, i) => {
                 if (opt.value == prePriority) {
                     newPriority.selectedIndex = i;
-                }
+                };
             });
 
             td.innerHTML = '';
@@ -263,7 +262,6 @@ function editTask(button, id) {
         };
     });
 };
-
 
 function deleteTask(button, id) {
     button.parentElement.parentElement.remove();
