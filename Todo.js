@@ -184,10 +184,10 @@ function editTask(button, id) {
 
     // 
     const newNo = document.createElement('input');
-    newNo.type = 'text'
+    newNo.type = 'text';
     const newName = document.createElement('input');
-    newName.type = 'text'
-    const newPriority = document.createElement('select')
+    newName.type = 'text';
+    const newPriority = document.createElement('select');
     const newDate = document.createElement('input');
     const actionBtn = document.createElement('button');
     //
