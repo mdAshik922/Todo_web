@@ -1,14 +1,14 @@
 function getEById(id) {
     return document.getElementById(id)
-}
-const taskForm = getEById('task-form')
-const tBody = getEById('tBody')
-const date = getEById('date')
-const sortDate = getEById('sortDate')
-const search = getEById('search')
-const filter = getEById('filter')
-const sort = getEById('sort')
-const tFoot = getEById('tFoot')
+};
+const taskForm = getEById('task-form');
+const tBody = getEById('tBody');
+const date = getEById('date');
+const sortDate = getEById('sortDate');
+const search = getEById('search');
+const filter = getEById('filter');
+const sort = getEById('sort');
+const tFoot = getEById('tFoot');
 
 // date.value = "2018-07-22";
 date.value = new Date().toISOString().slice(0, 10);
