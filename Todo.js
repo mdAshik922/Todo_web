@@ -68,16 +68,16 @@ search.addEventListener('keyup', function (e) {
             return task;
         }
     }).forEach((task, index) => {
-        addTask(task, index)
+        addTask(task, index);
 
-    })
-})
+    });
+});
 
 sortDate.addEventListener('change', function (e) {
-    tBody.innerHTML = ''
-    search.value = ''
+    tBody.innerHTML = '';
+    search.value = '';
     sort.selectedIndex = 0;
-    const tasks = getTasksFromLocalStorage()
+    const tasks = getTasksFromLocalStorage();
 
     tasks.filter(task => {
 
