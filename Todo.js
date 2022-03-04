@@ -154,12 +154,12 @@ filter.addEventListener('change', function (e) {
             if (task.priority == "low") {
                 return task;
             }
-        }
+        };
     }).forEach((task, index) => {
-        addTask(task, index)
+        addTask(task, index);
 
-    })
-})
+    });
+});
 
 function addTask(task, index) {
     const tr = document.createElement("tr");
