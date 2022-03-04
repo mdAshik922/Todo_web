@@ -34,28 +34,27 @@ taskForm.addEventListener('submit', function (e) {
 
 function displayToUI(taskObj) {
 
-}
+};
 
 function getTasksFromLocalStorage() {
-    let tasks = []
+    let tasks = [];
     const data = localStorage.getItem("tasks");
     if (data) {
-        tasks = JSON.parse(data)
+        tasks = JSON.parse(data);
     }
     return tasks;
-}
+};
 
 function setTasksToLocalStorage(tasks) {
-    localStorage.setItem('tasks', JSON.stringify(tasks))
-}
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+};
 
 window.onload = function (e) {
     const tasks = getTasksFromLocalStorage()
     tasks.forEach(function (task, index) {
-        addTask(task, index)
-    })
-}
-
+        addTask(task, index);
+    });
+};
 
 search.addEventListener('keyup', function (e) {
     tBody.innerHTML = ''
