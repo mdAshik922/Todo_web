@@ -176,8 +176,8 @@ function addTask(task, index) {
             <button onclick="editTask(this,'${task.id}')"><i class="fas fa-edit"></i></button>
         </td>
         `
-    tBody.appendChild(tr)
-}
+    tBody.appendChild(tr);
+};
 
 function editTask(button, id) {
     const tds = button.parentElement.parentElement.children;
