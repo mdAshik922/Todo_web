@@ -117,7 +117,7 @@ sort.addEventListener('change', function (e) {
 });
 
 filter.addEventListener('change', function (e) {
-    tBody.innerHTML = ''
+    tBody.innerHTML = '';
     const filterValue = e.target.value;
     const tasks = getTasksFromLocalStorage();
     search.value = '';
@@ -128,31 +128,30 @@ filter.addEventListener('change', function (e) {
         } else if (filterValue == "complete") {
             if (task.status == "complete") {
                 return task;
-            }
+            };
         } else if (filterValue == "incomplete") {
             if (task.status == "incomplete") {
                 return task;
-            }
+            };
         } else if (filterValue == "toDay") {
             if (task.date == new Date().toISOString().slice(0, 10)) {
                 return task;
-            }
+            };
         } else if (filterValue == "high") {
             if (task.priority == "high") {
                 return task;
-            }
+            };
         } else if (filterValue == "medium") {
             if (task.priority == "medium") {
                 return task;
-            }
+            };
         } else if (filterValue == "low") {
             if (task.priority == "low") {
                 return task;
-            }
+            };
         };
     }).forEach((task, index) => {
         addTask(task, index);
-
     });
 });
 
