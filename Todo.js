@@ -85,17 +85,17 @@ sortDate.addEventListener('change', function (e) {
             return task;
         }
     }).forEach((task, index) => {
-        addTask(task, index)
-    })
+        addTask(task, index);
+    });
 
 
-})
+});
 sort.addEventListener('change', function (e) {
     const sortValue = e.target.value;
-    tBody.innerHTML = ''
-    const tasks = getTasksFromLocalStorage()
-    search.value = ''
-    filter.selectedIndex = 0
+    tBody.innerHTML = '';
+    const tasks = getTasksFromLocalStorage();
+    search.value = '';
+    filter.selectedIndex = 0;
     tasks.sort(function (a, b) {
         if (new Date(a.date) > new Date(b.date)) {
             if (sortValue === 'newest') {
