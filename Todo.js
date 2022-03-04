@@ -19,18 +19,17 @@ taskForm.addEventListener('submit', function (e) {
     [...this.elements].forEach(el => {
         if (el.type !== "submit") {
             formData[el.name] = el.value;
-        }
-    })
+        };
+    });
     formData["status"] = "incomplete";
     formData['id'] = uuidv4();
-    const tasks = getTasksFromLocalStorage()
-    addTask(formData, tasks.length + 1)
-    tasks.push(formData)
-    setTasksToLocalStorage(tasks)
+    const tasks = getTasksFromLocalStorage();
+    addTask(formData, tasks.length + 1);
+    tasks.push(formData);
+    setTasksToLocalStorage(tasks);
 
-
-    this.reset()
-})
+    this.reset();
+});
 
 function displayToUI(taskObj) {
 
