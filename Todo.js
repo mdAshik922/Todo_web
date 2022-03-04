@@ -264,12 +264,10 @@ function editTask(button, id) {
                     return task;
                 });
                 setTasksToLocalStorage(tasks);
-
             });
             td.innerHTML = '';
             td.appendChild(actionBtn);
         };
-
     });
 };
 
@@ -306,9 +304,8 @@ function completeTask(button, id) {
                     }
                 }
                 return task;
-
-            })
+            });
             setTasksToLocalStorage(modifiedTask);
         };
-    })
+    });
 };
