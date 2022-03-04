@@ -117,15 +117,13 @@ sort.addEventListener('change', function (e) {
         addTask(task, index)
 
     })
-})
-
-
+});
 
 filter.addEventListener('change', function (e) {
     tBody.innerHTML = ''
     const filterValue = e.target.value;
-    const tasks = getTasksFromLocalStorage()
-    search.value = ''
+    const tasks = getTasksFromLocalStorage();
+    search.value = '';
 
     tasks.filter(task => {
         if (filterValue == "") {
