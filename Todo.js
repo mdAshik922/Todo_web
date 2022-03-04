@@ -106,17 +106,17 @@ sort.addEventListener('change', function (e) {
 
         } else if (new Date(a.date) < new Date(b.date)) {
             if (sortValue === 'newest') {
-                return 1
+                return 1;
             } else {
-                return -1
+                return -1;
             }
         } else {
-            return 0
-        }
+            return 0;
+        };
     }).forEach((task, index) => {
-        addTask(task, index)
+        addTask(task, index);
 
-    })
+    });
 });
 
 filter.addEventListener('change', function (e) {
