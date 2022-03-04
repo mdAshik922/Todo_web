@@ -85,9 +85,8 @@ sortDate.addEventListener('change', function (e) {
     }).forEach((task, index) => {
         addTask(task, index);
     });
-
-
 });
+
 sort.addEventListener('change', function (e) {
     const sortValue = e.target.value;
     tBody.innerHTML = '';
@@ -97,17 +96,17 @@ sort.addEventListener('change', function (e) {
     tasks.sort(function (a, b) {
         if (new Date(a.date) > new Date(b.date)) {
             if (sortValue === 'newest') {
-                return -1
-            } else {
-                return 1
-            }
+                return -1;
+            } else  {
+                return 1;
+            };
 
         } else if (new Date(a.date) < new Date(b.date)) {
             if (sortValue === 'newest') {
                 return 1;
             } else {
                 return -1;
-            }
+            };
         } else {
             return 0;
         };
