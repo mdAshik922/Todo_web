@@ -56,15 +56,15 @@ window.onload = function (e) {
 };
 
 search.addEventListener('keyup', function (e) {
-    tBody.innerHTML = ''
+    tBody.innerHTML = '';
     const searchTerm = e.target.value;
-    filter.selectedIndex = 0
-    const tasks = getTasksFromLocalStorage()
+    filter.selectedIndex = 0;
+    const tasks = getTasksFromLocalStorage();
 
     tasks.filter(task => {
         if (task.taskName.includes(searchTerm)) {
             return task;
-        }
+        };
     }).forEach((task, index) => {
         addTask(task, index);
 
