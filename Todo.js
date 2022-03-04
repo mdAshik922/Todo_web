@@ -202,13 +202,13 @@ function editTask(button, id) {
             const preNo = td.innerText;
             noTd = td;
             newNo.value = preNo;
-            td.innerHTML = ''
+            td.innerHTML = '';
             td.appendChild(newNo);
         } else if (td.id == 'name') {
             const preName = td.innerText;
             nameTd = td;
             newName.value = preName;
-            td.innerHTML = ''
+            td.innerHTML = '';
             td.appendChild(newName);
         } else if (td.id == "priority") {
             const prePriority = td.innerText;
@@ -272,7 +272,6 @@ function editTask(button, id) {
 };
 
 
-
 function deleteTask(button, id) {
     button.parentElement.parentElement.remove();
     const tasks = getTasksFromLocalStorage();
@@ -293,7 +292,7 @@ function completeTask(button, id) {
             } else {
                 td.innerText = "incomplete";
             };
-            
+
             const tasks = getTasksFromLocalStorage();
 
             const modifiedTask = tasks.filter(task => {
