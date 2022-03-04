@@ -1,5 +1,5 @@
 function getEById(id) {
-    return document.getElementById(id)
+    return document.getElementById(id);
 };
 const taskForm = getEById('task-form');
 const tBody = getEById('tBody');
