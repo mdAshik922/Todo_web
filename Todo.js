@@ -293,6 +293,7 @@ function completeTask(button, id) {
                 td.innerText = "incomplete";
             };
             const tasks = getTasksFromLocalStorage();
+
             const modifiedTask = tasks.filter(task => {
                 if (task.id === id) {
                     if (task.status == 'incomplete') {
@@ -303,6 +304,7 @@ function completeTask(button, id) {
                         return task;
                     };
                 };
+                
                 return task;
             });
             setTasksToLocalStorage(modifiedTask);
