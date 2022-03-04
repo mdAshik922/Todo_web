@@ -174,8 +174,7 @@ function addTask(task, index) {
             <button onclick="deleteTask(this,'${task.id}')"><i class="fas fa-trash-alt"></i></button>
             <button onclick="completeTask(this,'${task.id}')"><i class="fas fa-check-square"></i></button>
             <button onclick="editTask(this,'${task.id}')"><i class="fas fa-edit"></i></button>
-        </td>
-        `
+        </td>`;
     tBody.appendChild(tr);
 };
 
