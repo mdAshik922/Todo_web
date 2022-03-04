@@ -162,7 +162,7 @@ filter.addEventListener('change', function (e) {
 })
 
 function addTask(task, index) {
-    const tr = document.createElement("tr")
+    const tr = document.createElement("tr");
     tr.innerHTML = `
     <input hidden value='${task.id}'>
         <td id='no'>${index}</td>
