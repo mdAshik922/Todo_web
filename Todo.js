@@ -186,7 +186,7 @@ function editTask(button, id) {
     let noTd;
     let nameTd;
     let priorityTd;
-    let dateTd;
+    let dateTd
     //
 
     [...tds].forEach(td => {
@@ -268,7 +268,7 @@ function deleteTask(button, id) {
     const tasks = getTasksFromLocalStorage();
     const modifiedArray = tasks.filter(task => {
         return task.id !== id;
-    })
+    });
     setTasksToLocalStorage(modifiedArray);
 };
 
