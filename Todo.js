@@ -182,12 +182,12 @@ function editTask(button, id) {
     const newPriority = document.createElement('select');
     const newDate = document.createElement('input');
     const actionBtn = document.createElement('button');
-    //
+    
     let noTd;
     let nameTd;
     let priorityTd;
-    let dateTd
-    //
+    let dateTd;
+    
 
     [...tds].forEach(td => {
         if (td.id == 'no') {
