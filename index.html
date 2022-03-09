@@ -79,22 +79,51 @@
                 </div>
             </div>
         </div>
+        <div id="bulk_action">
+            <div id="actions">
+                <button id="delete">Delete</button>
+                <select aria-placeholder="select one" name="priority" id="bulk_priority"
+                    style="border: 2px solid black;">
+                    <option disabled selected>--change priority--</option>
+                    <option value="high">High</option>
+                    <option value="medium">Medium</option>
+                    <option value="low">Low</option>
+                </select>
+                <select aria-placeholder="select one" name="priority" id="bulk_status"
+                    style="border: 2px solid black;">
+                    <option disabled selected>Change Status</option>
+                    <option value="complete">Complete</option>
+                    <option value="incomplete">Incomplete</option>
+                </select>
+               <div style="border: 1px solid black;">
+                   <input placeholder="Modify the name" type="text" id="edit_inp">
+                   <select style="border-left: 2px solid black;" name="" id="edit_sel">
+                       <option value="name">Name</option>
+                       <option value="date">Date</option>
+                   </select>
+               </div>
+            </div>
+            <div id="dismiss">
+                <button>X</button>
+            </div>
+        </div>
         <div class="container table_container">
             <table class="table table-responsive table-white">
                 <thead>
-                    <tr>
-                        <th scope="col">No.</th>
-                        <th scope="col">Task Name</th>
-                        <th scope="col">Priority</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Action</th>
+
+                    <th class="all_checked"><input id="all" name="all" type="checkbox"><label for="all">All</label></th>
+                    <th scope="col">No.</th>
+                    <th scope="col">Task Name</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody id="tBody"></tbody>
             </table>
         </div>
-        
+
     </main>
 
     <script src="Todo.js"></script>
