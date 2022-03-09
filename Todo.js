@@ -343,7 +343,7 @@ function actionDiv() {
 bulkDelete.addEventListener('click', function (e) {
     let tasks = getTasksFromLocalStorage()
     selectedTask.forEach(tr => {
-        tr.remove()
+        tr.remove();
         const id = tr.firstElementChild.value;
         tasks = tasks.filter(task => {
             if (task.id !== id) {
@@ -351,8 +351,8 @@ bulkDelete.addEventListener('click', function (e) {
             }
         })
     })
-    setTasksToLocalStorage(tasks)
-})
+    setTasksToLocalStorage(tasks);
+});
 
 
 function editTask(button, id) {
@@ -378,14 +378,14 @@ function editTask(button, id) {
             const preNo = td.innerText;
             noTd = td;
             newNo.value = preNo;
-            td.innerHTML = ''
+            td.innerHTML = '';
             td.appendChild(newNo)
         } else if (td.id == 'name') {
             const preName = td.innerText;
             nameTd = td;
             newName.value = preName;
-            td.innerHTML = ''
-            td.appendChild(newName)
+            td.innerHTML = '';
+            td.appendChild(newName);
         } else if (td.id == "priority") {
             const prePriority = td.innerText;
             priorityTd = td;
@@ -398,9 +398,9 @@ function editTask(button, id) {
             const options = newPriority.children;
             [...options].forEach((opt, i) => {
                 if (opt.value == prePriority) {
-                    newPriority.selectedIndex = i
+                    newPriority.selectedIndex = i;
                 }
-            })
+            });
 
             td.innerHTML = '';
             td.appendChild(newPriority)
@@ -410,7 +410,7 @@ function editTask(button, id) {
             newDate.type = 'date';
             newDate.value = preDate;
             td.innerHTML = '';
-            td.appendChild(newDate)
+            td.appendChild(newDate);
         } else if (td.id == 'action') {
             const preAction = td.innerHTML;
             actionBtn.innerHTML = '<i class="fas fa-save"></i>';
@@ -429,7 +429,7 @@ function editTask(button, id) {
 
                 td.innerHTML = preAction;
                 const id = tds[0].value;
-                const tasks = getTasksFromLocalStorage()
+                const tasks = getTasksFromLocalStorage();
 
                 tasks.filter((task, i) => {
                     if (task.id == id) {
