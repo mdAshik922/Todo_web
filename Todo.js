@@ -439,15 +439,15 @@ function editTask(button, id) {
                     }
                     return task;
                 })
-                setTasksToLocalStorage(tasks)
+                setTasksToLocalStorage(tasks);
 
             })
             td.innerHTML = ''
-            td.appendChild(actionBtn)
+            td.appendChild(actionBtn);
         }
 
     })
-}
+};
 
 
 
@@ -455,10 +455,10 @@ function deleteTask(button, id) {
     button.parentElement.parentElement.remove()
     const tasks = getTasksFromLocalStorage()
     const modifiedArray = tasks.filter(task => {
-        return task.id !== id
+        return task.id !== id;
     })
     setTasksToLocalStorage(modifiedArray);
-}
+};
 
 function completeTask(button, id) {
     const tds = button.parentElement.parentElement.children;
@@ -466,10 +466,10 @@ function completeTask(button, id) {
         if (td.id == 'status') {
             const status = td.textContent;
             if (status == 'incomplete') {
-                td.innerText = "complete"
+                td.innerText = "complete";
             } else {
-                td.innerText = "incomplete"
-            }
+                td.innerText = "incomplete";
+            };
             const tasks = getTasksFromLocalStorage()
             const modifiedTask = tasks.filter(task => {
                 if (task.id === id) {
@@ -477,14 +477,14 @@ function completeTask(button, id) {
                         task.status = 'complete'
                         return task;
                     } else {
-                        task.status = 'incomplete'
+                        task.status = 'incomplete';
                         return task;
                     }
                 }
                 return task;
 
             })
-            setTasksToLocalStorage(modifiedTask)
+            setTasksToLocalStorage(modifiedTask);
         }
     })
 }
