@@ -1,22 +1,22 @@
 function $(id) {
-    return document.getElementById(id)
-}
-const taskForm = $('task-form')
-const tBody = $('tBody')
-const date = $('date')
-const sortDate = $('sortDate')
-const search = $('search')
-const filter = $('filter')
-const sort = $('sort')
-const tFoot = $('tFoot')
-const priority = $('priority')
-const bulkAction = $('bulk_action')
-const allSelect = $('all')
-const dismiss = document.querySelector('#dismiss  button')
+    return document.getElementById(id);
+};
+const taskForm = $('task-form');
+const tBody = $('tBody');
+const date = $('date');
+const sortDate = $('sortDate');
+const search = $('search');
+const filter = $('filter');
+const sort = $('sort');
+const tFoot = $('tFoot');
+const priority = $('priority');
+const bulkAction = $('bulk_action');
+const allSelect = $('all');
+const dismiss = document.querySelector('#dismiss  button');
 const bulkDelete = document.querySelector('#actions #delete');
-const bulk_priority = document.querySelector('#bulk_priority')
-const editInp = $('edit_inp')
-const editSel = $('edit_sel')
+const bulk_priority = document.querySelector('#bulk_priority');
+const editInp = $('edit_inp');
+const editSel = $('edit_sel');
 
 
 
@@ -32,63 +32,60 @@ taskForm.addEventListener('submit', function (e) {
         if (el.type !== "submit") {
             formData[el.name] = el.value;
         }
-    })
+    });
     formData["status"] = "incomplete";
     formData['id'] = uuidv4();
-    const tasks = getTasksFromLocalStorage()
-    addTask(formData, tasks.length + 1)
-    tasks.push(formData)
-    setTasksToLocalStorage(tasks)
+    const tasks = getTasksFromLocalStorage();
+    addTask(formData, tasks.length + 1);
+    tasks.push(formData);
+    setTasksToLocalStorage(tasks);
 
-
-    this.reset()
+    this.reset();
     date.value = today;
-})
-
-
+});
 
 function getTasksFromLocalStorage() {
     let tasks = []
     const data = localStorage.getItem("tasks");
     if (data) {
-        tasks = JSON.parse(data)
+        tasks = JSON.parse(data);
     }
     return tasks;
 }
 
 function setTasksToLocalStorage(tasks) {
-    localStorage.setItem('tasks', JSON.stringify(tasks))
-}
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+};
 
 window.onload = function (e) {
     const tasks = getTasksFromLocalStorage()
     tasks.forEach(function (task, index) {
-        addTask(task, index)
-    })
-}
+        addTask(task, index);
+    });
+};
 
 
 search.addEventListener('keyup', function (e) {
-    tBody.innerHTML = ''
+    tBody.innerHTML = '';
     const searchTerm = e.target.value;
-    filter.selectedIndex = 0
-    const tasks = getTasksFromLocalStorage()
+    filter.selectedIndex = 0;
+    const tasks = getTasksFromLocalStorage();
 
     tasks.filter(task => {
         if (task.taskName.includes(searchTerm)) {
             return task;
         }
     }).forEach((task, index) => {
-        addTask(task, index)
+        addTask(task, index);
 
-    })
-})
+    });
+});
 
 sortDate.addEventListener('change', function (e) {
-    tBody.innerHTML = ''
-    search.value = ''
+    tBody.innerHTML = '';
+    search.value = '';
     sort.selectedIndex = 0;
-    const tasks = getTasksFromLocalStorage()
+    const tasks = getTasksFromLocalStorage();
 
     tasks.filter(task => {
 
@@ -96,47 +93,44 @@ sortDate.addEventListener('change', function (e) {
             return task;
         }
     }).forEach((task, index) => {
-        addTask(task, index)
-    })
-
-
-})
+        addTask(task, index);
+    });
+});
 sort.addEventListener('change', function (e) {
     const sortValue = e.target.value;
-    tBody.innerHTML = ''
-    const tasks = getTasksFromLocalStorage()
-    search.value = ''
+    tBody.innerHTML = '';
+    const tasks = getTasksFromLocalStorage();
+    search.value = '';
     filter.selectedIndex = 0
     tasks.sort(function (a, b) {
         if (new Date(a.date) > new Date(b.date)) {
             if (sortValue === 'newest') {
-                return -1
+                return -1;
             } else {
-                return 1
-            }
+                return 1;
+            };
 
         } else if (new Date(a.date) < new Date(b.date)) {
             if (sortValue === 'newest') {
-                return 1
+                return 1;
             } else {
-                return -1
+                return -1;
             }
         } else {
-            return 0
-        }
+            return 0;
+        };
     }).forEach((task, index) => {
-        addTask(task, index)
+        addTask(task, index);
 
-    })
-})
-
+    });
+});
 
 
 filter.addEventListener('change', function (e) {
-    tBody.innerHTML = ''
+    tBody.innerHTML = '';
     const filterValue = e.target.value;
-    const tasks = getTasksFromLocalStorage()
-    search.value = ''
+    const tasks = getTasksFromLocalStorage();
+    search.value = '';
 
     tasks.filter(task => {
         if (filterValue == "") {
@@ -167,18 +161,18 @@ filter.addEventListener('change', function (e) {
             }
         }
     }).forEach((task, index) => {
-        addTask(task, index)
+        addTask(task, index);
 
-    })
-})
+    });
+});
 
 
 function addTask(task, index) {
     const tr = document.createElement("tr");
-    const checkBox = document.createElement('input')
-    checkBox.type = 'checkbox'
-    checkBox.className = 'check'
-    checkBox.addEventListener('change', (e) => checkFunc(e))
+    const checkBox = document.createElement('input');
+    checkBox.type = 'checkbox';
+    checkBox.className = 'check';
+    checkBox.addEventListener('change', (e) => checkFunc(e));
     checkBox.value = value = task.id;
     tr.innerHTML = `
     <input hidden value='${task.id}'>
@@ -191,27 +185,25 @@ function addTask(task, index) {
             <button onclick="deleteTask(this,'${task.id}')"><i class="fas fa-trash-alt"></i></button>
             <button onclick="completeTask(this,'${task.id}')"><i class="fas fa-check-square"></i></button>
             <button onclick="editTask(this,'${task.id}')"><i class="fas fa-edit"></i></button>
-        </td>
-        `
-    tr.insertAdjacentElement('afterbegin', checkBox)
-    tBody.appendChild(tr)
+        </td> `;
+    tr.insertAdjacentElement('afterbegin', checkBox);
+    tBody.appendChild(tr);
 
-}
+};
 
-let selectedTask = []
-
+let selectedTask = [];
 
 
 editSel.onchange = function (e) {
     if (this[this.selectedIndex].value == 'name') {
-        editInp.type = 'text'
-        editInp.value = ''
+        editInp.type = 'text';
+        editInp.value = '';
         editInp.placeholder = 'Modify the name';
     } else {
         editInp.type = 'date'
         editInp.placeholder = '';
     }
-}
+};
 editInp.oninput = function (e) {
 
     if (this.type == 'text') {
@@ -230,23 +222,22 @@ editInp.oninput = function (e) {
                 if (td.id == "date") {
                     td.innerHTML = this.value;
                 }
-            })
+            });
            }
            
-        })
+        });
     }
-
-}
+};
 
 document.getElementById('bulk_status').addEventListener('change', function (e) {
     const selected = this[this.selectedIndex].value;
-    let tasks = getTasksFromLocalStorage()
+    let tasks = getTasksFromLocalStorage();
     selectedTask.forEach(tr => {
         [...tr.children].forEach(td => {
             if (td.id == "status") {
                 td.innerHTML = selected;
             }
-        })
+        });
         tasks = tasks.filter(task => {
             if (task.id == tr.firstElementChild.value) {
                 task.status = selected;
@@ -254,15 +245,15 @@ document.getElementById('bulk_status').addEventListener('change', function (e) {
             } else {
                 return task;
             }
-        })
-        setTasksToLocalStorage(tasks)
-    })
-})
+        });
+        setTasksToLocalStorage(tasks);
+    });
+});
 
 bulk_priority.onchange = function (e) {
     if (e.target.selectedIndex) {
         const selected = this[e.target.selectedIndex].value;
-        let tasks = getTasksFromLocalStorage()
+        let tasks = getTasksFromLocalStorage();
         selectedTask.forEach(tr => {
             tasks = tasks.filter(task => {
                 if (task.id == tr.firstElementChild.value) {
@@ -271,31 +262,31 @@ bulk_priority.onchange = function (e) {
                 } else {
                     return task;
                 }
-            })
+            });
             setTasksToLocalStorage(tasks);
             [...tr.children].forEach(child => {
                 if (child.id == 'priority') {
                     child.innerHTML = selected;
                 }
-            })
-        })
-    }
+            });
+        });
+    };
 
-}
+};
 
 
 
 function checkFunc(e) {
     const tr = e.target.parentElement;
     if (e.target.checked) {
-        selectedTask.push(tr)
-        actionDiv()
+        selectedTask.push(tr);
+        actionDiv();
     } else {
 
         selectedTask.splice(selectedTask.findIndex(task => {
             task.firstElementChild.value === e.target.value;
         }), 1)
-        actionDiv()
+        actionDiv();
     }
 }
 allSelect.addEventListener('change', function (e) {
@@ -304,16 +295,16 @@ allSelect.addEventListener('change', function (e) {
     if (this.checked) {
         [...allCheck].forEach(check => {
             check.checked = true;
-            selectedTask.push(check.parentElement)
-            actionDiv()
+            selectedTask.push(check.parentElement);
+            actionDiv();
         })
     } else {
         [...allCheck].forEach(check => {
             check.checked = false;
-            actionDiv()
-        })
+            actionDiv();
+        });
     }
-})
+});
 dismiss.addEventListener('click', function (e) {
     document.getElementById('bulk_status').selectedIndex = 0;
     document.getElementById('bulk_priority').selectedIndex = 0;
@@ -325,9 +316,9 @@ dismiss.addEventListener('click', function (e) {
     bulkAction.style.display = 'none';
     [...allCheck].forEach(check => {
         check.checked = false;
-        actionDiv()
-    })
-})
+        actionDiv();
+    });
+});
 
 
 function actionDiv() {
