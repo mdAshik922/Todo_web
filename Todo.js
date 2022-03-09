@@ -19,8 +19,6 @@ const editInp = $('edit_inp');
 const editSel = $('edit_sel');
 
 
-
-
 // date.value = "2018-07-22";
 const today = new Date().toISOString().slice(0, 10);
 date.value = today;
