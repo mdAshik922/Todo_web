@@ -138,9 +138,7 @@ button i {
     pointer-events: none;
     color: rgb(212, 224, 140);
     font-size: 25px;
-}rgb(208, 255, 0)
-
-
+}
 
 .all_checked {
     display: flex;
